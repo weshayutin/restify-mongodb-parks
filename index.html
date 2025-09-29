@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Map of Parks and Historic Sites</title>
-    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <!--[if lte IE 8]>
       <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
   <![endif]-->
@@ -40,14 +40,14 @@
     <a href="https://openshift.redhat.com/app/console/application_type/custom?name=parks&amp;cartridges%5B%5D=nodejs-0.10&amp;cartridges%5B%5D=mongodb-2.4&amp;initial_git_url=https%3A%2F%2Fgithub.com%2Fryanj%2Frestify-mongodb-parks.git"><img alt="Run me on OpenShift" src="https://launch-shifter.rhcloud.com/launch/RUN%20ME%20ON.svg" style="max-width:100%;"></a>
   </span>
   <div id="map"></div>
-  <script src="//cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    var map = L.map('map').setView([37.8, -122.3], 10);
+    var map = L.map('map').setView([39.8283, -98.5795], 5);
     var markerLayerGroup = L.layerGroup().addTo(map);
-    L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
-      minZoom: 5,
-      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+      minZoom: 3,
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     function getPins(e){
